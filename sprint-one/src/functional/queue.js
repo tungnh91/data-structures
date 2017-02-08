@@ -9,7 +9,8 @@ var Queue = function() {
 
   someInstance.enqueue = function(value) {
     size++;
-    storage.size = value;
+    storage[size] = value;
+    console.log('storage after adding', storage)
   };
 
   someInstance.dequeue = function() {
@@ -17,7 +18,21 @@ var Queue = function() {
     if(size <0) {
       size =0;
     }
-    return storage.size;
+    var keys = [];
+    for (var key in storage){
+      keys.push(parseInt(key));
+    }
+    var firstIn = Math.min.apply(null, keys)
+    var removed = storage[firstIn];
+    console.log('removed' ,removed)
+    delete storage[firstIn];
+    console.log('storage after delete' , storage)
+    for(var k in storage){
+      storage[k-1] = storage[k];
+      delete storage[k];
+    }
+    console.log('storage with updated keys',storage)
+    return removed;
   };
 
   someInstance.size = function() {
