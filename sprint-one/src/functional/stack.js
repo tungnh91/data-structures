@@ -12,7 +12,7 @@ var Stack = function() {
 
   someInstance.pop = function() {
     size--;
-    if(size < 0) {
+    if (size < 0) {
       size = 0;
     }
     return someInstance[size];
