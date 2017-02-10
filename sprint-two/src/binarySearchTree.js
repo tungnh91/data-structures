@@ -22,7 +22,23 @@ var BinarySearchTree = function(value) {
   };
   
   bst.contains = function (value) {
-
+    if (this.value === value) {
+      return true;
+    } else {
+      if (value < this.value) {
+        if (this.left !== undefined) {
+          return this.left.contains(value); 
+        } else {
+          return false;
+        }
+      } else {
+        if (this.right !== undefined) {
+          return this.right.contains(value);
+        } else {
+          return false;
+        }
+      }
+    }
   };
   
   bst.depthFirstLog = function (value) {
