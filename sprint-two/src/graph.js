@@ -31,6 +31,18 @@ Graph.prototype.removeNode = function(node) {
       delete this.storage[i];
     }
   }
+  for (var j = 0; j < this.edges.length; j++) {
+    // for (var k = 0; k < this.storage.length; k++) {
+    if (this.edges[j] === node) {
+      this.edges[j] = undefined;
+      if (j % 2 === 0) {
+        this.edges[j + 1] = undefined;
+      } else {
+        this.edges[j - 1] = undefined;
+      }
+    }
+    // }
+  }
 };
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
