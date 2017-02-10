@@ -18,8 +18,6 @@ setPrototype.contains = function(item) {
 };
 
 setPrototype.remove = function(item) {
-  console.log(this._storage.length);
-  debugger;
   for (var i = 0; i < this._storage.length; i++) {
     if (this._storage[i] === item) {
       this._storage[i] = undefined;
@@ -29,4 +27,7 @@ setPrototype.remove = function(item) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ * add: O(1)
+ * contains: O(n)
+ * remove: O(n)
  */
