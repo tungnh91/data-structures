@@ -32,7 +32,6 @@ Graph.prototype.removeNode = function(node) {
     }
   }
   for (var j = 0; j < this.edges.length; j++) {
-    // for (var k = 0; k < this.storage.length; k++) {
     if (this.edges[j] === node) {
       this.edges[j] = undefined;
       if (j % 2 === 0) {
@@ -41,7 +40,6 @@ Graph.prototype.removeNode = function(node) {
         this.edges[j - 1] = undefined;
       }
     }
-    // }
   }
 };
 
@@ -75,6 +73,9 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
 
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
+  for (var i = 0; i < this.storage.length; i++) {
+    cb(this.storage[i].value);
+  }
 };
 
 /*
