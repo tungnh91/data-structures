@@ -18,6 +18,13 @@ setPrototype.contains = function(item) {
 };
 
 setPrototype.remove = function(item) {
+  console.log(this._storage.length);
+  debugger;
+  for (var i = 0; i < this._storage.length; i++) {
+    if (this._storage[i] === item) {
+      this._storage[i] = undefined;
+    }
+  }
 };
 
 /*
