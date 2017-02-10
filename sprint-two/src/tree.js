@@ -12,7 +12,7 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
-  this.children.push({value: value});
+  this.children.push(Tree(value));
 };
 
 treeMethods.contains = function(target) {
