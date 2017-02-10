@@ -42,7 +42,12 @@ var BinarySearchTree = function(value) {
   };
   
   bst.depthFirstLog = function (value) {
-
+    value(this.value);
+    if (this.left !== undefined) {
+      this.left.depthFirstLog(value);
+    } else if (this.right !== undefined) {
+      this.right.depthFirstLog(value);
+    }
   };
   
   return bst;
@@ -51,4 +56,7 @@ var BinarySearchTree = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ * insert: O(n)
+ * contains: O(n)
+ * depthFirstLog: O(n)
  */
