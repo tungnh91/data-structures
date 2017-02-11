@@ -5,21 +5,21 @@ var DoublyLinkedList = function() {
 
   list.addToTail = function(value) {
     var newTail = Node(value);
+    var oldTail = list.tail;
     if (list.head === null) {
       list.head = newTail;
     } else {
       list.tail.next = newTail;
+      list.tail.previous = oldTail;
     }
     list.tail = newTail;
   };
 
   list.removeHead = function() {
-    // list.head.value = list.head.next.value;
-    // list.head.next = list.head.next.next;
     var formerHead = list.head;
     list.head = list.head.next;
+    list.head.previous = null;
     return formerHead.value;
-
   };
 
   list.contains = function(target) {
@@ -43,6 +43,7 @@ var Node = function(value) {
 
   node.value = value;
   node.next = null;
+  node.previous = null;
 
   return node;
 };
