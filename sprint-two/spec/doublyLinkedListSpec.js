@@ -27,7 +27,6 @@ describe('doublyLinkedList', function() {
     doublyLinkedList.addToTail(5);
     expect(doublyLinkedList.tail.value).to.equal(5);
   });
-
   it('should designate a new head when new nodes are added', function() {
     doublyLinkedList.addToHead(4);
     expect(doublyLinkedList.head.value).to.equal(4);
@@ -77,11 +76,11 @@ describe('doublyLinkedList', function() {
   });
 
   it('should return null when attempting to remove head from empty list', function() {
-    expect(DoublyLinkedList.removeHead()).to.equal(null);
+    expect(doublyLinkedList.removeHead()).to.equal(null);
   });
 
   it('should return null when attempting to remove tail from empty list', function() {
-    expect(DoublyLinkedList.removeTail()).to.equal(null);
+    expect(doublyLinkedList.removeTail()).to.equal(null);
   });
 
   // add more tests here to test the functionality of doublyLinkedList
