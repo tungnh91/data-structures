@@ -3,6 +3,10 @@ var DoublyLinkedList = function() {
   list.head = null;
   list.tail = null;
 
+  list.addToHead = function(value) {
+
+  };
+
   list.addToTail = function(value) {
     var newTail = Node(value);
     var oldTail = list.tail;
@@ -20,6 +24,10 @@ var DoublyLinkedList = function() {
     list.head = list.head.next;
     list.head.previous = null;
     return formerHead.value;
+  };
+
+  list.removeTail = function() {
+
   };
 
   list.contains = function(target) {
