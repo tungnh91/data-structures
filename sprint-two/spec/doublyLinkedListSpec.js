@@ -16,6 +16,11 @@ describe('doublyLinkedList', function() {
     expect(doublyLinkedList.contains).to.be.a('function');
   });
 
+  it('should have methods named "addToHead", "removeTail"', function() {
+    expect(doublyLinkedList.addToHead).to.be.a('function');
+    expect(doublyLinkedList.removeTail).to.be.a('function');
+  });
+
   it('should designate a new tail when new nodes are added', function() {
     doublyLinkedList.addToTail(4);
     expect(doublyLinkedList.tail.value).to.equal(4);
