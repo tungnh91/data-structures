@@ -30,7 +30,7 @@ var DoublyLinkedList = function() {
   list.removeHead = function() {
     var formerHead = list.head;
     if (list.head.next === null) {
-      list.head = null;  
+      list.head = list.tail = null;  
     } else {
       list.head = list.head.next;
       list.head.previous = null;
@@ -40,9 +40,13 @@ var DoublyLinkedList = function() {
 
   list.removeTail = function() {
     var formerTail = list.tail;
-    list.tail = formerTail.previous;
-    list.tail.next = null;
-    return formerTail;    
+    if (list.tail.previous === null) {
+      list.head = list.tail = null;
+    } else {
+      list.tail = formerTail.previous;
+      list.tail.next = null;
+    }
+    return formerTail.value;    
   };
 
   list.contains = function(target) {
